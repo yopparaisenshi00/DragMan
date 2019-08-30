@@ -69,6 +69,10 @@ artifacts/
 *.svclog
 *.scc
 
+# Unity3D generated meta files
+*.pidb.meta
+*.pdb.meta
+
 # Chutzpah Test files
 _Chutzpah*
 
