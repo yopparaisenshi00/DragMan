@@ -55,13 +55,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Camera.cs" />
-     <Compile Include="Assets\Scripts\Enemy.cs" />
-     <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
      <Compile Include="Assets\Scripts\WadaTestSprict\wadaTestPlayer.cs" />
      <Compile Include="Assets\Tutorial_Info\Scripts\Readme.cs" />
-     <None Include="Assets\Scripts\Text.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/2170063.MAETEL/Documents/github/DragMan/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
