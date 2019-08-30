@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\HitText.cs" />
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\HotRoom.cs" />
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\MoveCubeController.cs" />
+     <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\RotateCubeController.cs" />
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\Rotator.cs" />
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\ShotController.cs" />
