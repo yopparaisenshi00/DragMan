@@ -55,6 +55,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\EnemyController.cs" />
+     <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\FloorController.cs" />
+     <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\HitText.cs" />
+     <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\HotRoom.cs" />
+     <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\MoveCubeController.cs" />
+     <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\RotateCubeController.cs" />
+     <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\Rotator.cs" />
+     <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\ShotController.cs" />
+     <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\ShotEnemyController.cs" />
      <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
      <Compile Include="Assets\Scripts\WadaTestSprict\wadaTestPlayer.cs" />
      <Compile Include="Assets\Tutorial_Info\Scripts\Readme.cs" />
