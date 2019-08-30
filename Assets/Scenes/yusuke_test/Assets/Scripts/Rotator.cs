@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Rotator : MonoBehaviour
 {
+    public Vector3 rot;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,6 @@ public class Rotator : MonoBehaviour
     void Update()
     {
         // 一定の角度で回転させる
-        transform.Rotate(new Vector3(15, 30, 45) * Time.deltaTime);
+        transform.Rotate(new Vector3(rot.x, rot.y, rot.z) * Time.deltaTime);
     }
 }

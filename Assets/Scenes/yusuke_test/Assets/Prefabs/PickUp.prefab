@@ -57,11 +57,10 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a3f737518db29944b274d1166cd3cd9, type: 2}
+  - {fileID: 2100000, guid: 645072a8ff7dd8e49a96d0d817fd975f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,7 +103,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4314181900971988505}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bedd92b9db79ed4a9219ce335e5df0f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5877ed19564999943902600f067173f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!54 &3566232330322626174
