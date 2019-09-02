@@ -55,46 +55,57 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scenes\ueno_test\Camera.cs" />
+     <Compile Include="Assets\Scenes\ueno_test\Enemy.cs" />
+     <Compile Include="Assets\Scenes\ueno_test\Player.cs" />
+     <Compile Include="Assets\Scenes\ueno_test\yusuke_test\Scripts\ItemBoxController.cs" />
+     <Compile Include="Assets\Scenes\ueno_test\yusuke_test\Scripts\PopEffectController.cs" />
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\EffectBoxController.cs" />
+     <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\EffectSetEnemyController.cs" />
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\EnemyController.cs" />
+     <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\FallEnemyController.cs" />
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\FloorController.cs" />
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\HitText.cs" />
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\HotRoom.cs" />
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\MoveCubeController.cs" />
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\RangeEnemyController.cs" />
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\RotateCubeController.cs" />
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\Rotator.cs" />
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\ShotController.cs" />
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\ShotEnemyController.cs" />
+     <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\StepEnemyController.cs" />
      <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
      <Compile Include="Assets\Scripts\WadaTestSprict\wadaTestPlayer.cs" />
      <Compile Include="Assets\Tutorial_Info\Scripts\Readme.cs" />
+     <None Include="Assets\Scenes\ueno_test\Text.txt" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Users/2170063.MAETEL/Documents/github/DragMan/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>C:/Users/2170117.MAETEL/Desktop/使うやつまとね/GitHub/DragMan/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/Users/2170063.MAETEL/Documents/github/DragMan/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>C:/Users/2170117.MAETEL/Desktop/使うやつまとね/GitHub/DragMan/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/2170063.MAETEL/Documents/github/DragMan/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/2170117.MAETEL/Desktop/使うやつまとね/GitHub/DragMan/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/2170063.MAETEL/Documents/github/DragMan/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/2170117.MAETEL/Desktop/使うやつまとね/GitHub/DragMan/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>C:/Users/2170063.MAETEL/Documents/github/DragMan/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>C:/Users/2170117.MAETEL/Desktop/使うやつまとね/GitHub/DragMan/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>C:/Users/2170063.MAETEL/Documents/github/DragMan/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>C:/Users/2170117.MAETEL/Desktop/使うやつまとね/GitHub/DragMan/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Users/2170063.MAETEL/Documents/github/DragMan/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>C:/Users/2170117.MAETEL/Desktop/使うやつまとね/GitHub/DragMan/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/2170063.MAETEL/Documents/github/DragMan/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/2170117.MAETEL/Desktop/使うやつまとね/GitHub/DragMan/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/2170063.MAETEL/Documents/github/DragMan/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/2170117.MAETEL/Desktop/使うやつまとね/GitHub/DragMan/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
