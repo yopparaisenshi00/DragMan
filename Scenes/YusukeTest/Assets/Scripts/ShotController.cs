@@ -8,16 +8,20 @@ public class ShotController : MonoBehaviour
     private Vector3 pos;    // プレイヤーの位置
     private Vector3 vec;    // プレイヤーとの方向
 
-    public GameObject player;   // プレイヤー
+    //public GameObject player;   // プレイヤー
+    private GameObject player;
 
     public float spd;       // 速度
 
     private int timer;
-    public int MaxTimer;
+    public int MaxTimer;    // 何秒たったら消すか
+    public float MaxLen;    // どれだけ離れたら消すか
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player");
+
         // 出現した位置を保存
         apper = transform.position;
 
@@ -30,38 +34,52 @@ public class ShotController : MonoBehaviour
     void Update()
     {
         MoveEnemy();
-        //Destroy();
+        Destroy();
     }
 
     void MoveEnemy()
     {
-        // 出現した位置を保存
-        apper = transform.position;
-
-        // プレイヤーの位置保存
-        pos = player.transform.position;
-
         // プレイヤーがいた方向
-        vec = pos - apper;
+        vec = (pos - apper).normalized;
 
         // vecの方向にspd進む
-        move(vec.x, vec.y, vec.z);
+        move(vec, spd);
     }
 
+    // ショット消す処理
     void Destroy()
     {
         timer += (int)(1.0f * Time.deltaTime);
-        if(timer++ > MaxTimer)
+
+        // 時間たったら壊す
+        if (timer++ > MaxTimer)
+        {
+            Destroy(gameObject);
+        }
+
+        // 距離はなれたら壊す
+        if (Vector3.Distance(apper, transform.position) > MaxLen)
         {
             Destroy(gameObject);
         }
     }
 
     // 追従する
-    void move(float x, float y, float z)
+    void move(Vector3 vec, float spd)
     {
+        vec.y = 0;
         // 移動を設定
-        transform.position += new Vector3(x, y, z);
+        transform.position += vec * (spd * Time.deltaTime);
+    }
+
+    // 当たった瞬間に呼び出される
+    void OnTriggerEnter(Collider other)
+    {
+        // 当たったものの名前がPickUp
+        if (other.gameObject.CompareTag("PLAYER"))
+        {
+            Destroy(gameObject);
+        }
     }
 
 }

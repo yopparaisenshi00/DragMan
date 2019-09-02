@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
-    private int count;
+    //private int count;
 
-    public Text countText, winText;
+    //public Text countText, winText;
     public float spd;
 
 
@@ -19,13 +19,13 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         // スコアを格納する
-        count = 0;
+        //count = 0;
 
         // Textプロパティの初期値を設定する(使う値の下に書く)
-        SetCountText();
+        //SetCountText();
 
         // 文字を空にして後から文字を入れる
-        winText.text = "";
+        //winText.text = "";
     }
 
     // Update is called once per frame
@@ -60,23 +60,23 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
 
             // スコアを1つ加算
-            count++;
+            //count++;
 
             // 値を文字にする
-            SetCountText();
+            //SetCountText();
         }
     }
 
     // テキストを何回も書かずにまとめるためのもの
-    void SetCountText()
-    {
-        countText.text = "Count : " + count.ToString();
+    //void SetCountText()
+    //{
+    //    countText.text = "Count : " + count.ToString();
 
-        // 全部集めてたら文字を入れる
-        if (count >= 12)
-        {
-            winText.text = "You Win!";
-        }
-    }
+    //    // 全部集めてたら文字を入れる
+    //    if (count >= 12)
+    //    {
+    //        winText.text = "You Win!";
+    //    }
+    //}
 
 }
