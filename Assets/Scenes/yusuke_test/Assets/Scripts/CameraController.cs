@@ -17,14 +17,13 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // カメラの位置をプレイヤーから一定に離れたところに置く
-        transform.position = player.transform.position + offset;
+
     }
 
     // 全てのモノがUpdate()で処理された後に実行される
     void LateUpdate()
     {
         // カメラの位置をプレイヤーから一定に離れたところに置く
-        //transform.position = player.transform.position + offset;
+        transform.position = player.transform.position + offset;
     }
 }
