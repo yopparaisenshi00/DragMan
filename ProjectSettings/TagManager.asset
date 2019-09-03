@@ -9,6 +9,8 @@ TagManager:
   - Floor
   - Enemy
   - Item
+  - DragObj
+  - GrabColl
   - ApperEnemy
   layers:
   - Default
