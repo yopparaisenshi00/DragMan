@@ -6,17 +6,20 @@ public class Enemy : MonoBehaviour {
 	public bool is_grab = false;
 	public GameObject target;
 	private Player player;
+    Collider istri;
 
-	// Start is called before the first frame update
-	void Start() {
+    // Start is called before the first frame update
+    void Start() {
 		player = target.GetComponent<Player>();
-	}
+        istri = GetComponent<Collider>();
+    }
 
 	// Update is called once per frame
 	void Update() {
 		//掴まれていたら
 		if (is_grab) {
-			this.transform.position = player.transform.position - player.transform.forward;
+            istri.isTrigger = false;
+            this.transform.position = player.transform.position - player.transform.forward;
 		}
 	}
 }
