@@ -9,6 +9,7 @@ TagManager:
   - Floor
   - Enemy
   - Item
+  - ApperEnemy
   layers:
   - Default
   - TransparentFX

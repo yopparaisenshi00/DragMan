@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     private Vector3 axis;
     private Vector3 input;                  //入力値
     public float jump_power = 15.0f;        //ジャンプ力
-    public float gravity = 20.0f;           //重力
+    public float gravity = 0.1f;           //重力
     private bool is_grabbed = false;        //掴む判定
     private float stop_fric = 0.1f;         //慣性(停止)
     private float grab_fric = 0;            //慣性(掴む)
@@ -26,7 +26,6 @@ public class Player : MonoBehaviour
     //--------------------------------------------------//
     // 出現させるエフェクト
     public GameObject effect;
-    public GameObject item_effect;
 
     private int timer;          // エフェクトが出るまでの待機時間
     private bool on_effect;     // エフェクトを出す判定
@@ -42,8 +41,6 @@ public class Player : MonoBehaviour
     public float range_max_z;
     public float range_min_z;
 
-    private bool item_hit;  // アイテムに当たった判定
-    public int item_effect_num = 10;
     //-------------------------------------------------//
 
 
@@ -68,7 +65,6 @@ public class Player : MonoBehaviour
 
         // エフェクト
         if (on_effect) Effect();
-        if (item_hit)  Item_Put_Effect();
     }
 
 
@@ -180,22 +176,6 @@ public class Player : MonoBehaviour
     }// Effect()
 
     // アイテム取ったときのエフェクト
-    void Item_Put_Effect()
-    {
-        // いっきにnum個のeffectを出す
-        for (int i = 0; i < item_effect_num; ++i)
-        {
-            // 生成する物体、生成場所、回転軸の設定
-            Instantiate(item_effect,
-                new Vector3(
-                    transform.position.x + Random.Range(range_min_x, range_max_x),
-                    transform.position.y + Random.Range(range_min_y, range_max_y),
-                    transform.position.z + Random.Range(range_min_z, range_max_z)),
-                item_effect.transform.rotation);
-        }
-        item_hit = false;
-
-    }
 
 
     void FixedUpdate()
@@ -210,7 +190,6 @@ public class Player : MonoBehaviour
     {
         Grab(hit);  //掴む
         Landing();  //着地判定
-        Item_Hit(hit); // アイテムと
     }
 
     //掴む
@@ -239,15 +218,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    // アイテムと当たった時
-    void Item_Hit(ControllerColliderHit hit)
-    {
-        if (hit.gameObject.tag == "Item")
-        {
-            item_hit = true;
-            Destroy(hit.gameObject);
-        }
-    }
 
 
 }
