@@ -55,6 +55,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scenes\ueno_test\Camera.cs" />
+     <Compile Include="Assets\Scenes\ueno_test\Enemy.cs" />
+     <Compile Include="Assets\Scenes\ueno_test\Player.cs" />
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\FloorController.cs" />
@@ -69,6 +72,7 @@
      <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
      <Compile Include="Assets\Scripts\WadaTestSprict\wadaTestPlayer.cs" />
      <Compile Include="Assets\Tutorial_Info\Scripts\Readme.cs" />
+     <None Include="Assets\Scenes\ueno_test\Text.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/2170063.MAETEL/Documents/github/DragMan/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
