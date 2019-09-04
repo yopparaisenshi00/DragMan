@@ -9,14 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2046543619080074929}
-  - component: {fileID: 9009048122881416507}
-  - component: {fileID: 195716166338463113}
   - component: {fileID: -4372924992676294073}
   - component: {fileID: 4423168012463400360}
+  - component: {fileID: 9009048122881416507}
+  - component: {fileID: 195716166338463113}
   - component: {fileID: 3613164215342341135}
   - component: {fileID: 7023197569307872259}
   m_Layer: 0
-  m_Name: RandomApperBox
+  m_Name: ApperBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,6 +36,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4372924992676294073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467069269769164781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af7274a87411ba54bb69601c5e0093da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 2040924393701919389, guid: a64e06edfe7cbb5428d21ca62c3f4796, type: 3}
+  num: 15
+  range_max_x: 0.5
+  range_min_x: -0.5
+  range_max_y: 0.5
+  range_min_y: -0.5
+  range_max_z: 0.5
+  range_min_z: -0.5
+--- !u!114 &4423168012463400360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467069269769164781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e32a08795746794ba2d3582d2612a33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer_max: 150
 --- !u!33 &9009048122881416507
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -82,39 +115,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &-4372924992676294073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7467069269769164781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af7274a87411ba54bb69601c5e0093da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effect: {fileID: 2040924393701919389, guid: a64e06edfe7cbb5428d21ca62c3f4796, type: 3}
-  num: 30
-  range_max_x: 0.5
-  range_min_x: -0.5
-  range_max_y: 0.5
-  range_min_y: -0.5
-  range_max_z: 0.5
-  range_min_z: -0.5
---- !u!114 &4423168012463400360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7467069269769164781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e32a08795746794ba2d3582d2612a33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer_max: 150
 --- !u!65 &3613164215342341135
 BoxCollider:
   m_ObjectHideFlags: 0
