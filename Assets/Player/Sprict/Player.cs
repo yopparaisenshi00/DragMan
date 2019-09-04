@@ -18,14 +18,16 @@ public class Player : MonoBehaviour
     private float grab_fric_power = 0.8f;   //慣性(掴む)
     private float jump_fric = 0;            //慣性(ジャンプ)
     private float jump_fric_power = 0.7f;   //慣性(ジャンプ)
-    public GameObject target;
-    private Enemy enemy;
-    private Vector3 serve_input_normalized; //掴んでいる時に保存
+	private Enemy enemy;
+	private Vector3 serve_input_normalized; //掴んでいる時に方向保存
+	private bool is_freeze = false;         //硬直判定
+	private float freeze_timer = 0;			//
+	public float freeze_time = 10;			//硬直時間
 
 
-    //--------------------------------------------------//
-    // 出現させるエフェクト
-    public GameObject effect;
+	//--------------------------------------------------//
+	// 出現させるエフェクト
+	public GameObject effect;
 
     private int timer;          // エフェクトが出るまでの待機時間
     private bool on_effect;     // エフェクトを出す判定
@@ -49,28 +51,52 @@ public class Player : MonoBehaviour
     {
         chara_cont = GetComponent<CharacterController>();
         velocity = Vector3.zero;
-        enemy = target.GetComponent<Enemy>();
         serve_input_normalized = Vector3.zero;
-    }
+		
+
+	}
+
+
+	//離す
+	public void Grab_false() {
+		is_grabbed = false;
+		is_freeze = true;	//硬直
+	}
+
+	//硬直
+	void Freeze_Timer() {
+		if (is_freeze) {
+			freeze_timer += Time.deltaTime;
+			if (freeze_timer >= freeze_time) {
+				freeze_timer = 0;
+				is_freeze = false;
+			}
+		}
+	}
 
 
 
-
-    // Update is called once per frame
-    void Update()
+	// Update is called once per frame
+	void Update()
     {
-        Move();
-        Debug.DrawLine(chara_ray.position, chara_ray.position - transform.up * 0.1f, Color.red);
+		//移動関連
+		Move();
+		//硬直
+		Freeze_Timer();
+		Debug.DrawLine(chara_ray.position, chara_ray.position - transform.up * 0.1f, Color.red);
 
         // エフェクト
         if (on_effect) Effect();
     }
 
-
+	//移動関連
     void Move()
     {
-        //地面に着いている時の慣性
-        if (chara_cont.isGrounded) jump_fric = 1;
+		//硬直なら全て飛ばす
+		if (is_freeze) return;
+
+		//地面に着いている時の慣性
+		if (chara_cont.isGrounded) jump_fric = 1;
         else jump_fric = jump_fric_power;
         //掴んでいる時の慣性
         if (is_grabbed) grab_fric = grab_fric_power;
@@ -174,41 +200,44 @@ public class Player : MonoBehaviour
         }
     }// Effect()
 
-    //// アイテム取ったときのエフェクト
-    //void Item_Put_Effect()
-    //{
-    //    // いっきにnum個のeffectを出す
-    //    for (int i = 0; i < item_effect_num; ++i)
-    //    {
-    //        // 生成する物体、生成場所、回転軸の設定
-    //        Instantiate(item_effect,
-    //            new Vector3(
-    //                transform.position.x + Random.Range(range_min_x, range_max_x),
-    //                transform.position.y + Random.Range(range_min_y, range_max_y),
-    //                transform.position.z + Random.Range(range_min_z, range_max_z)),
-    //            item_effect.transform.rotation);
-    //    }
-    //    item_hit = false;
-    //}
-
 
     void FixedUpdate()
     {
-        //キャラクターを移動させる処理
-        chara_cont.Move(velocity * Time.deltaTime);
+		//硬直なら全て飛ばす
+		if (is_freeze) return;
+		//キャラクターを移動させる処理
+		chara_cont.Move(velocity * Time.deltaTime);
     }
+
+
+
+
 
 
     //何かに当たった時
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        Grab(hit);  //掴む
-        Landing();  //着地判定
-        //Item_Hit(hit); // アイテムと
-    }
+		Grab_Atack(hit);    //敵に当たった時、掴んでいたら敵消去
+		Grab(hit);			//掴む
+        Landing();			//着地判定
 
-    //掴む
-    void Grab(ControllerColliderHit hit)
+	}
+
+	//敵に当たった時掴んでいたら敵消去
+	void Grab_Atack(ControllerColliderHit hit) {
+		//敵に当たった時
+		if (hit.gameObject.tag == "Enemy") {
+			//掴んでいたら
+			if (is_grabbed) {
+				Destroy(hit.gameObject);
+				//is_grabbed = false;
+				FindObjectOfType<Score>().Score_Add_Grab_Attack(); //スコア加算(Findは使わない方がいいかも)
+			}
+		}
+	}
+
+	//掴む
+	void Grab(ControllerColliderHit hit)
     {
         //敵に当たっているとき
         if (hit.gameObject.tag == "Enemy")
@@ -216,15 +245,16 @@ public class Player : MonoBehaviour
             //掴んでいなくて、キーを押したら
             if (Input.GetKeyDown(KeyCode.Z) || Input.GetButtonDown("Grab") && !is_grabbed)
             {
-                //掴む
-                enemy.is_grab = true;
-                is_grabbed = true;
+				//掴む
+				enemy = hit.gameObject.GetComponent<Enemy>();
+				enemy.Grab_Switch(); //掴まれた判定切り替え
+				is_grabbed = true;
             }
         }
     }
 
-    //着地判定
-    void Landing()
+	//着地判定
+	void Landing()
     {
         //真下が当たっていたら
         if (Physics.Raycast(chara_ray.position, chara_ray.position - transform.up * 0.1f))
@@ -232,16 +262,6 @@ public class Player : MonoBehaviour
             velocity.y = 0;
         }
     }
-
-    //// アイテムと当たった時
-    //void Item_Hit(ControllerColliderHit hit)
-    //{
-    //    if (hit.gameObject.tag == "Item")
-    //    {
-    //        item_hit = true;
-    //        Destroy(hit.gameObject);
-    //    }
-    //}
 
 
 }

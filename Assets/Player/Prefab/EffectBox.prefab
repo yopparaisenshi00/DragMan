@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7967107553649487629}
   - component: {fileID: 7967107553649487617}
   - component: {fileID: 7967107553649487618}
-  - component: {fileID: 7967107553649487628}
+  - component: {fileID: 1335276351298498889}
   m_Layer: 0
   m_Name: EffectBox
   m_TagString: Untagged
@@ -79,7 +79,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &7967107553649487628
+--- !u!114 &1335276351298498889
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

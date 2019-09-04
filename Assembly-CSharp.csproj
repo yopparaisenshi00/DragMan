@@ -67,6 +67,7 @@
      <Compile Include="Assets\Player\Sprict\Player.cs" />
      <Compile Include="Assets\Scenes\Title\Title.cs" />
      <Compile Include="Assets\Scenes\ueno_test\Camera.cs" />
+     <Compile Include="Assets\Scenes\ueno_test\Score.cs" />
      <Compile Include="Assets\Scenes\ueno_test\yusuke_test\Scripts\TimeDestroyer.cs" />
      <Compile Include="Assets\Scenes\ueno_test\yusuke_test\Scripts\TimeLimitController.cs" />
      <Compile Include="Assets\Scenes\yusuke_test\Assets\Scripts\EffectSetEnemyController.cs" />

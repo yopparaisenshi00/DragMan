@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Effect_Box : MonoBehaviour
+public class Effect_ground_to_pop : MonoBehaviour
 {
     // エフェクトの大きさ
     public float scale_spd; // エフェクトが小さくなる速さ    
