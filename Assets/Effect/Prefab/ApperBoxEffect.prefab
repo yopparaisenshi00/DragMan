@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 54675798056067383}
+  - component: {fileID: 4413250813893173382}
   - component: {fileID: 9094572181132618065}
   - component: {fileID: 1564610187101085290}
   - component: {fileID: 1710462979359317661}
-  - component: {fileID: 4413250813893173382}
   m_Layer: 0
-  m_Name: BoxApperEffect
+  m_Name: ApperBoxEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,6 +34,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4413250813893173382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040924393701919389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ea4492e54baf0a4b82625f88e96321b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spd: 12
+  scale_min: 0
+  init_scale_max: 0.3
+  init_scale_min: 0.05
+  init_rot_max: 360
+  init_rot_min: 0
+  timer_scale_up_max: 15
+  scale_spd: 0
+  alpha_spd: 0.15
+  timer_max: 100
 --- !u!33 &9094572181132618065
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -93,24 +115,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4413250813893173382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2040924393701919389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ea4492e54baf0a4b82625f88e96321b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spd: 7
-  scale_min: 0.05
-  init_scale_max: 0.5
-  init_scale_min: 0.05
-  init_rot_max: 360
-  init_rot_min: 0
-  timer_scale_up_max: 50
-  scale_spd: 0.04
-  timer_max: 5
