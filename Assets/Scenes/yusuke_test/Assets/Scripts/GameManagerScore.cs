@@ -16,7 +16,8 @@ public class GameManagerScore : MonoBehaviour
     public int sub_text_pos_x, sub_text_pos_y;  // 引く分
 
     public int score;                           // 総得点
-    public int add_score;                       // スコアをどれだけ足すか
+	private int front_score = 0;
+	public int add_score;                       // スコアをどれだけ足すか
     private bool calculation_score_fg;          // 計算をするかどうか
 
     private int state;                          // テキスト大きくするときの状態
@@ -25,8 +26,13 @@ public class GameManagerScore : MonoBehaviour
     public int sub_text_size;                   // 引くとき
     private bool size_chenge_fg;                // サイズを変える時のフラグ
 
-    // Start is called before the first frame update
-    void Start()
+	public int grab_score = 1000;				// スコア加算(引きずった後)
+	public int grab_attack_score = 800;         // スコア加算(ぶつかったら時)
+
+
+
+	// Start is called before the first frame update
+	void Start()
     {
         // テキストのサイズを設定
         score_text.fontSize = init_text_size = text_size;
@@ -40,9 +46,6 @@ public class GameManagerScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // テキスト表示
-        text_set();
-
         // スコアが入る動作（テスト）
         test_calculation_score();
 
@@ -62,22 +65,48 @@ public class GameManagerScore : MonoBehaviour
             size_chenge();
             text_move_pos(add_text_pos_x, add_text_pos_y, sub_text_pos_x, sub_text_pos_y);    // 位置も更新
         }
+
+		// テキスト表示
+		text_set();
+
+
+		//前のスコアとして保存
+		front_score = score;
+
+	}
+
+
+	// テキスト表示
+	void text_set()
+    {
+        score_text.text = "SCORE: " + score;
     }
 
-    // テキスト表示
-    void text_set()
-    {
-        score_text.text = "スコア : " + score;
-    }
+	//スコア加算
+	public void Score_Add(int add) {
+		score += add;
+	}
 
-    // 計算
-    void test_calculation_score()
+	//スコア加算(引きずった後)
+	public void Score_Add_Grab() {
+		score += grab_score;
+	}
+
+	//スコア加算(ぶつかった時)
+	public void Score_Add_Grab_Attack() {
+		score += grab_attack_score;
+	}
+
+	// 計算
+	void test_calculation_score()
     {
-        // 計算していないときに何かしらの動作があったら計算出来る
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            // 計算をする
-            calculation_score_fg = true;
+		// 計算していないときに何かしらの動作があったら計算出来る
+		//if (Input.GetKeyDown(KeyCode.Space))
+		//{
+		if (score != front_score) 
+		{
+			// 計算をする
+			calculation_score_fg = true;
 
             // 新しくスコアが入ったときに大きさをリセット
             size_chenge_fg = false;

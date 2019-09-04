@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour {
 			timer = 0;
 			Destroy(this);
 			player.Grab_false(); //プレイヤー離す
-			FindObjectOfType<Score>().Score_Add_Grab(); //スコア加算(Findは使わない方がいいかも)
+			FindObjectOfType<GameManagerScore>().Score_Add_Grab(); //スコア加算(Findは使わない方がいいかも)
 		}	
 	}
 

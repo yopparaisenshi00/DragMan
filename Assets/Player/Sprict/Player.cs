@@ -231,7 +231,7 @@ public class Player : MonoBehaviour
 			if (is_grabbed) {
 				Destroy(hit.gameObject);
 				//is_grabbed = false;
-				FindObjectOfType<Score>().Score_Add_Grab_Attack(); //スコア加算(Findは使わない方がいいかも)
+				FindObjectOfType<GameManagerScore>().Score_Add_Grab_Attack(); //スコア加算(Findは使わない方がいいかも)
 			}
 		}
 	}
